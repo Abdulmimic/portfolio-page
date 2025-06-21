@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdul's Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    header, section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #4b0082;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    /* Updated: Compact Three-column Skills */
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 0 10px;
+    }
+
+    .skill-box {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .skill-box:hover {
+      animation: bounce 0.4s ease;
+    }
+
+    .skill-box h3 {
+      font-size: 1.2rem;
+      color: #4b0082;
+      margin-bottom: 10px;
+    }
+
+    .skill-box ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skill-box li {
+      margin: 6px 0;
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .skill-box li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #4b0082;
+      font-size: 14px;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+      animation: bounce 0.3s ease;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #999;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #388e3c;
+      animation: bounce 0.3s ease;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.3s; }
+    .fade-in:nth-child(2) { animation-delay: 0.6s; }
+    .fade-in:nth-child(3) { animation-delay: 0.9s; }
+
+    @media (max-width: 600px) {
+      .skills-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="fade-in">
+    <h1>Hi, I'm Abdul Rahman</h1>
+    <p>A Biomedical Engineering student actively working on three innovative projects supported by Artificial Intelligence (AI). I'm deeply curious about Machine Learning and currently exploring the world of Web Development to expand my technical skillset.</p>
+  </header>
+
+  <section class="fade-in">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-box">
+        <h3>🔰 Basic Skills</h3>
+        <ul>
+          <li>C Programming</li>
+          <li>Python (Basic)</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>🚀 Current Focus</h3>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Artificial Intelligence (AI)</li>
+          <li>Machine Learning (ML)</li>
+        </ul>
+      </div>
+      <div class="skill-box">
+        <h3>🛠️ Tools Used</h3>
+        <ul>
+          <li>GitHub</li>
+          <li>Responsive Design</li>
+          <li>Deployment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="fade-in">
+    <h2>Featured Project</h2>
+    <p><strong>Quiz App:</strong> A responsive general knowledge quiz with timer and score tracking.</p>
+    <a href="https://abdulmimic.github.io/Quiz-app/" target="_blank" class="btn">Live Demo</a>
+    <a href="https://github.com/Abdulmimic/Quiz-app" target="_blank" class="btn">Source Code</a>
+  </section>
+
+  <section class="fade-in">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Abdul Rahman</p>
+  </footer>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Thank you! Your message has been submitted.");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
